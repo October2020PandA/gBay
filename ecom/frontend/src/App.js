@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import {Router} from "@reach/router"
 import './App.css';
 import ProductList from "./components/ProductList"
@@ -9,8 +8,9 @@ import Detail from "./components/Detail"
 function App() {
   return (
     <div className="App">
+      <h1>Hello World</h1>
       <Router>
-        <ProductList path="/products"/>
+        <ProductList path="/products/"/>
         <Detail path="/detail"/>
       </Router>
     </div>
