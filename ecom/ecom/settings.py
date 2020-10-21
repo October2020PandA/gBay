@@ -41,9 +41,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'frontend',
+    'rest_framework',
+
+    # Added this portion in - Ramiro
+    'corsheaders', 
 ]
 
 MIDDLEWARE = [
+    # Added this portion in - Ramiro
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -124,6 +131,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Added this in - Ramiro
+CORS_ORIGIN_WHITELIST = [
+
+"http://localhost:3000",
+
+]
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend/build/static"),
