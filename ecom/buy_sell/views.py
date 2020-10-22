@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from .serializers import *
+from django.core.files import File
 
 @api_view(['GET'])
 def index(request):
@@ -22,18 +23,26 @@ def index(request):
     # return Response("API BASE POINT", safe=False)
     return Response(api_urls)
 
+
+# Added this piece of code - Ramiro
+@api_view(['GET'])
+def user_list(request):
+    users = User.objects.all()
+    serializer = UserSerializer(users, many=True)
+    return Response(serializer.data)
+
 @api_view(['GET'])
 def product_list(request):
     products = Product.objects.all()
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
 
-# @api_view(['POST'])
-# def user_create(request):
-#     serializer = UserSerializer(data=request.data)
-#     if serializer.is_valid():
-#         serializer.save()
-#     return Response(serializer.data)
+@api_view(['POST'])
+def user_create(request):
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
 
 
 # @api_view(['GET'])
@@ -42,12 +51,13 @@ def product_list(request):
 #     serializer = ProductSerializer(products, many=False)
 #     return Response(serializer.data)s
 
-# @api_view(['POST'])
-# def product_create(request):
-#     serializer = ProductSerializer(data=request.data)
-#     if serializer.is_valid():
-#         serializer.save()
-#     return Response(serializer.data)
+@api_view(['POST'])
+def product_create(request):
+    serializer = ProductSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors)
 
 # @api_view(['POST'])
 # def product_update(request, id):

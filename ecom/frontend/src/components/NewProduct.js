@@ -1,20 +1,20 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import {Link} from "@reach/router"
 import axios from "axios"
 
-const Detail = () => {
+const NewProduct = () => {
 
 const [name, setName] = useState("");
 const [desc, setDesc] = useState("");
-const [category,setCategory] = useState("");
+const [atype,setAtype] = useState("");
 const [price, setPrice] = useState("");
 const [quantity, setQuantity] = useState("");
 const [rating, setRating] = useState("");
 
 const createProduct = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8000/product-detail/", {
-      name, desc, category, price, quantity, rating
+    axios.post("http://localhost:8000/product-create/", {
+      name, desc, atype, price, quantity, rating
     })
     .then((res) => console.log(res))
     .catch((err) => console.log(err))
@@ -25,7 +25,7 @@ const createProduct = (e) => {
             <Link to="/products">Go Home</Link>
             <h3>New Product</h3>
 
-            <form onSubmit={createProduct}>
+        <form onSubmit={createProduct}>
         <div>
           <label>Name:</label>
           <input type="text" name="name" onChange={(e) => setName(e.target.value)}/>
@@ -36,7 +36,7 @@ const createProduct = (e) => {
         </div>
         <div>
           <label>Category:</label>
-          <input type="text" name="atype" onChange={(e) => setCategory(e.target.value)}/>
+          <input type="text" name="atype" onChange={(e) => setAtype(e.target.value)}/>
         </div>
         <div>
           <label>Price:</label>
@@ -54,7 +54,9 @@ const createProduct = (e) => {
       </form>
         </div>
 
+// # user = models.ForeignKey(User, related_name="has_product", on_delete=models.CASCADE)
+
     )
 }
 
-export default Detail
+export default NewProduct
