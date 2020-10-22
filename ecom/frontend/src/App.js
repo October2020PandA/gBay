@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import axios from "axios"
-import {Router, Link} from "@reach/router"
+import React from 'react';
+import {Router} from "@reach/router"
 import './App.css';
 import ProductList from "./components/ProductList"
 import Detail from "./components/Detail"
