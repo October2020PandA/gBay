@@ -28,6 +28,14 @@ def product_list(request):
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
 
+# @api_view(['POST'])
+# def user_create(request):
+#     serializer = UserSerializer(data=request.data)
+#     if serializer.is_valid():
+#         serializer.save()
+#     return Response(serializer.data)
+
+
 # @api_view(['GET'])
 # def product_detail(request, id):
 #     products = Product.objects.get(id=id)
