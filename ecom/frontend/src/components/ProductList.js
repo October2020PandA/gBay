@@ -16,7 +16,7 @@ const buttonStyle = {
     marginBottom: "25px"
 }
 
-const ProductList = () => {
+const ProductList = (props) => {
 
     const [products, setProducts] = useState([]);
 
@@ -34,21 +34,23 @@ const ProductList = () => {
             <Link to="/new">
                 <button style={buttonStyle}>Add Product</button>
             </Link>
-      {products.map(({image, name, desc, atype, price, quantity, rating, user}) => (
+      {products.map((product) => (
         //Going to remove this styling portion, this is for show 
         <div 
             style={{
             display: "inline-block",
             marginRight: "15px",
             marginBottom: "15px"}}>
-          <img src={image} alt="photo of image"/>
-          <p><b>Name:</b> {name}</p>
-          <p><b>Description:</b> {desc}</p>
-          <p><b>Category:</b> {atype}</p>
-          <p><b>Price:</b> {price}</p>
-          <p><b>Quantity:</b> {quantity}</p>
-          <p><b>Rating:</b> {rating}</p>
-          <p><b>User:</b> {user}</p>
+          {/* <img src={image} alt="photo of image"/> */}
+          <Link to={"/product-detail/" + product.id}>
+            <p><b>Name:</b> {product.name}</p>
+          </Link>
+          <p><b>Description:</b> {product.desc}</p>
+          <p><b>Category:</b> {product.atype}</p>
+          <p><b>Price:</b> {product.price}</p>
+          <p><b>Quantity:</b> {product.quantity}</p>
+          <p><b>Rating:</b> {product.rating}</p>
+          <p><b>User:</b> {product.user}</p>
         </div>
       ))}   
         </div>

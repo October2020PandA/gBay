@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
 import axios from "axios"
-import {Link} from "@reach/router"
+import {Link, navigate} from "@reach/router"
 
 const Detail = (props) => {
 
@@ -13,17 +13,33 @@ useEffect(() => {
     .catch((err) => console.log(err))
 }, [])
 
+const deleteProduct = () => {
+    axios
+    .delete("http://localhost:8000/product-delete/" + props.id)
+    .then((data) => navigate("/products"))
+    .catch((err) => console.log(err))
+}
+
     return (
         <div>
-            <Link to="/products">Go Home</Link>
-            <h3>Product Information</h3>
-            <img src={product.image}/>
-            <h3>{product.name}</h3>
-            <p>{product.atype}</p>
-            <p>{product.desc}</p>
-            <p>{product.atype}</p>
-            <p>{product.price}</p>
-            <p>{product.rating}</p>
+            <div>
+                <Link to="/products">Go Home</Link>
+                <h3>Product Information</h3>
+                <img src={product.image}/>
+                <h3>{product.name}</h3>
+                <p><b>Category:</b> {product.atype}</p>
+                <p><b>Description:</b> {product.desc}</p>
+                <p><b>Price:</b> {product.price}</p>
+                <p><b>Rating:</b> {product.rating}</p>
+            </div>
+            <div>
+                <button onClick={deleteProduct}>Delete</button>
+            </div>
+            <div>
+                <Link to={"/product-update/" + product.id}>
+                    <button>Edit</button>
+                </Link>
+            </div>
         </div>
     )
 }
