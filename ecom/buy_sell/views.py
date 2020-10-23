@@ -45,11 +45,11 @@ def user_create(request):
     return Response(serializer.data)
 
 
-# @api_view(['GET'])
-# def product_detail(request, id):
-#     products = Product.objects.get(id=id)
-#     serializer = ProductSerializer(products, many=False)
-#     return Response(serializer.data)s
+@api_view(['GET'])
+def product_detail(request, id):
+    products = Product.objects.get(id=id)
+    serializer = ProductSerializer(products, many=False)
+    return Response(serializer.data)
 
 @api_view(['POST'])
 def product_create(request):
@@ -59,16 +59,17 @@ def product_create(request):
         return Response(serializer.data)
     return Response(serializer.errors)
 
-# @api_view(['POST'])
-# def product_update(request, id):
-#     product = Product.objects.get(id=id)
-#     serializer = ProductSerializer(instance=product, data=request.data)
-#     if serializer.is_valid():
-#         serializer.save()
-#     return Response(serializer.data)
+@api_view(['POST'])
+def product_update(request, id):
+    product = Product.objects.get(id=id)
+    serializer = ProductSerializer(instance=product, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors)
 
-# @api_view(['DELETE'])
-# def product_delete(request, id):
-#     product = Product.objects.get(id=id)
-#     product.delete()
-#     return Response("Item Successfully Deleted !!!")
+@api_view(['DELETE'])
+def product_delete(request, id):
+    product = Product.objects.get(id=id)
+    product.delete()
+    return Response("Item Successfully Deleted !!!")
