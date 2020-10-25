@@ -35,36 +35,41 @@ const Edit = (props) => {
     }
 
     return (
-        <div>
-            <h1>Edit Product</h1>
+
+
+        <div className="container" style={{boxShadow: "0px 2px 15px"}}>
             <form onSubmit={updateProduct}>
-                <div>
-                    <label>Name:</label>
-                    <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)}/>
+                <h2>Add a Product</h2>
+                <div className="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" className="form-control" name="name" value={name} onChange={(e) => setName(e.target.value)}/>
                 </div>
-                <div>
-                    <label>Description:</label>
-                    <input type="text" name="desc" value={desc} onChange={(e) => setDesc(e.target.value)}/>
+                <div className="form-group">
+                    <label for="desc">Description:</label>
+                    <input type="text" className="form-control" name="desc" value={desc} onChange={(e) => setDesc(e.target.value)}/>
                 </div>
-                <div>
-                    <label>Category:</label>
-                    <input type="text" name="atype" value={atype} onChange={(e) => setAtype(e.target.value)}/>
+                <div className="form-group">
+                    <label for="atype">Type:</label>
+                    <input type="text" className="form-control" name="atype" value={atype} onChange={(e) => setAtype(e.target.value)}/>
                 </div>
-                <div>
-                    <label>Price:</label>
-                    <input type="text" name="price" value={price} onChange={(e) => setPrice(e.target.value)}/>
+                <div className="form-group">
+                    <label for="price">Price:</label>
+                    <input type="text" className="form-control" name="price" value={price} onChange={(e) => setPrice(e.target.value)}/>
                 </div>
-                <div>
-                    <label>Quantity:</label>
-                    <input type="text" name="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
+                <div className="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" className="form-control" name="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
                 </div>
-                <div>
-                    <label>Rating:</label>
-                    <input type="text" name="rating" value={rating} onChange={(e) => setRating(e.target.value)}/>
+                <div className="form-group">
+                    <label for="rating">Rating:</label>
+                    <input type="number" className="form-control" name="rating" value={rating} onChange={(e) => setRating(e.target.value)}/>
                 </div>
-                <button type="submit">Submit</button>
+      
+                <button type="submit" className="btn btn-primary" style={{display: "inline-block"}}>Submit</button>
             </form>
-        </div>
+        <a href="/dashboard"><button type="submit" className="btn btn-warning" style={{display: "inline-block"}}>Cancel</button></a>
+
+      </div>
     )
 }
 export default Edit

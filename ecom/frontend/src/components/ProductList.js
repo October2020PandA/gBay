@@ -41,7 +41,6 @@ const ProductList = (props) => {
             display: "inline-block",
             marginRight: "15px",
             marginBottom: "15px"}}>
-          {/* <img src={image} alt="photo of image"/> */}
           <Link to={"/product-detail/" + product.id}>
             <p><b>Name:</b> {product.name}</p>
           </Link>
@@ -51,6 +50,7 @@ const ProductList = (props) => {
           <p><b>Quantity:</b> {product.quantity}</p>
           <p><b>Rating:</b> {product.rating}</p>
           <p><b>User:</b> {product.user}</p>
+          <img src={product.image} alt="photo of image"/>
         </div>
       ))}   
         </div>

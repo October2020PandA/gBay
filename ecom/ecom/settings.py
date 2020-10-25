@@ -143,3 +143,6 @@ CORS_ORIGIN_WHITELIST = [
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend/build/static"),
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
