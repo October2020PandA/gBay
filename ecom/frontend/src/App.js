@@ -22,22 +22,6 @@ function App() {
         <Edit path="/product-update/:id"/>
       </Router>
 
-      {/* const rootEl = document.getElementById('root');
-
-ReactDOM.render(
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/">
-                <MasterPage />
-            </Route>
-            <Route exact path="/details/:id" >
-                <DetailsPage />
-            </Route>
-        </Switch>
-    </BrowserRouter>,
-    rootEl
-); */}
-
     </div>
   );
 }

@@ -77,7 +77,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     desc = models.CharField(max_length=255)
     atype = models.CharField(max_length=255)
-    # image = models.ImageField(upload_to='images/', null=True)
+    image = models.ImageField(upload_to='post_images', null=True)
     price = models.IntegerField()
     sold = models.BooleanField(default=False)
     quantity = models.IntegerField()

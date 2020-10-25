@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import {Link} from "@reach/router"
+import {Link, navigate} from "@reach/router"
 import axios from "axios"
 
 
@@ -19,6 +19,7 @@ const Register = () => {
             first_name, last_name, user_name, email, password, confirmPass 
         })
         .then((res) => console.log(res))
+        .then((res) => navigate("/products/"))
         .catch((err) => console.log(err))
     }
 
@@ -49,7 +50,7 @@ const Register = () => {
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+                            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
                     </div>
                 </form>
                 <div class="text-center">Already have an account? <a href="#">Sign in</a></div>

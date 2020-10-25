@@ -21,7 +21,7 @@ const deleteProduct = () => {
 }
 
     return (
-        <div>
+        <div className="container" style={{textAlign: "center"}}>
             <div>
                 <Link to="/products">Go Home</Link>
                 <h3>Product Information</h3>
@@ -33,11 +33,11 @@ const deleteProduct = () => {
                 <p><b>Rating:</b> {product.rating}</p>
             </div>
             <div>
-                <button onClick={deleteProduct}>Delete</button>
+                <button onClick={deleteProduct} className="btn btn-warning">Delete</button>
             </div>
             <div>
                 <Link to={"/product-update/" + product.id}>
-                    <button>Edit</button>
+                    <button className="btn btn-primary">Edit</button>
                 </Link>
             </div>
         </div>
