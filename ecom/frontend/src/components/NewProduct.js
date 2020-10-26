@@ -58,7 +58,7 @@ const createProduct = (e) => {
 
                 <button type="submit" className="btn btn-primary" style={{display: "inline-block"}}>Submit</button>
         </form>
-        <a href="/dashboard"><button type="submit" className="btn btn-warning" style={{display: "inline-block"}}>Cancel</button></a>
+        <a href="/products"><button type="submit" className="btn btn-warning" style={{display: "inline-block"}}>Cancel</button></a>
 
       </div>
     )

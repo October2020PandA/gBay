@@ -39,7 +39,7 @@ const Edit = (props) => {
 
         <div className="container" style={{boxShadow: "0px 2px 15px"}}>
             <form onSubmit={updateProduct}>
-                <h2>Add a Product</h2>
+                <h2>Update</h2>
                 <div className="form-group">
                     <label for="name">Name:</label>
                     <input type="text" className="form-control" name="name" value={name} onChange={(e) => setName(e.target.value)}/>
@@ -67,7 +67,7 @@ const Edit = (props) => {
       
                 <button type="submit" className="btn btn-primary" style={{display: "inline-block"}}>Submit</button>
             </form>
-        <a href="/dashboard"><button type="submit" className="btn btn-warning" style={{display: "inline-block"}}>Cancel</button></a>
+        <a href="/products"><button type="submit" className="btn btn-warning" style={{display: "inline-block"}}>Cancel</button></a>
 
       </div>
     )

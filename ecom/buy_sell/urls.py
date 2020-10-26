@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+# from django.conf.urls.static import static
+# from django.conf import settings
+# from rest_framework import routers
 
 urlpatterns = [
     path('', views.index),
@@ -11,4 +14,4 @@ urlpatterns = [
     # , name="product-create"
     path('product-update/<str:id>' , views.product_update),
     path('product-delete/<str:id>' , views.product_delete),
-]
+] 

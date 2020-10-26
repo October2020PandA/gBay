@@ -53,7 +53,7 @@ const Register = () => {
                             <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
                     </div>
                 </form>
-                <div class="text-center">Already have an account? <a href="#">Sign in</a></div>
+                <div class="text-center">Already have an account? <a href="/login">Sign in</a></div>
             </div>
         </div>
     )

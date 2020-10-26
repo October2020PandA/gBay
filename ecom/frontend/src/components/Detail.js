@@ -21,7 +21,7 @@ const deleteProduct = () => {
 }
 
     return (
-        <div className="container" style={{textAlign: "center"}}>
+        <div className="container" style={{textAlign: "center", boxShadow: "0px 2px 15px rgba(0, 0, 0, 0.1)",}}>
             <div>
                 <Link to="/products">Go Home</Link>
                 <h3>Product Information</h3>
