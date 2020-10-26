@@ -25,7 +25,7 @@ const Login = () => {
                         <label class="float-left form-check-label"></label>
                     </div>        
                 </form>
-                <p class="text-center"><a href="#">Create an Account</a></p>
+                <p class="text-center"><a href="/register">Create an Account</a></p>
             </div>
 
         </div>
