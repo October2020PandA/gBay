@@ -9,7 +9,7 @@ const [atype,setAtype] = useState("");
 const [price, setPrice] = useState("");
 const [quantity, setQuantity] = useState("");
 const [rating, setRating] = useState("");
-const [image, setImage] = useState("");
+const [image, setImage] = useState("null");
 
 
 const createProduct = (e) => {
@@ -53,7 +53,7 @@ const createProduct = (e) => {
                 </div>
                 <div className="form-group">
                     <label for="rating">Image:</label>
-                    <input type="text" className="form-control" name="image" onChange={(e) => setImage(e.target.value)}/>
+                    <input type="file" className="form-control" name="image" onChange={(e) => setImage(e.target.files[0])}/>
                 </div>
 
                 <button type="submit" className="btn btn-primary" style={{display: "inline-block"}}>Submit</button>

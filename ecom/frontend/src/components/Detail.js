@@ -25,7 +25,7 @@ const deleteProduct = () => {
             <div>
                 <Link to="/products">Go Home</Link>
                 <h3>Product Information</h3>
-                <img src={product.image}/>
+                <img src={`http://localhost:8000`+product.image} style={{width: "100px"}}style={{width: "140px", height: "140px", marginLeft: "15px",}}alt="photo of image"/>
                 <h3>{product.name}</h3>
                 <p><b>Category:</b> {product.atype}</p>
                 <p><b>Description:</b> {product.desc}</p>

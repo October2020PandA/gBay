@@ -142,7 +142,17 @@ CORS_ORIGIN_WHITELIST = [
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend/build/static"),
+    os.path.join(BASE_DIR, 'assets'), 
+    os.path.join(BASE_DIR, 'resources'), 
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
