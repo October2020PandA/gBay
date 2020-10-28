@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from .serializers import *
 from django.core.files import File
 
+
 @api_view(['GET'])
 def index(request):
     # return render(request, "frontend/build/index.html")
@@ -65,8 +66,7 @@ def product_update(request, id):
     serializer = ProductSerializer(instance=product, data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response(serializer.data)
-    return Response(serializer.errors)
+    return Response(serializer.data)
 
 @api_view(['DELETE'])
 def product_delete(request, id):

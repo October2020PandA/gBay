@@ -50,16 +50,19 @@ const ProductList = (props) => {
             height: "500px",
             verticalAlign: "top",}}>
               
-          <Link to={"/product-detail/" + product.id}>
+              <div className="photo">
+              <Link to={"/product-detail/" + product.id}>
+              <img src={`http://localhost:8000`+product.image} style={{width: "100px"}}style={{width: "140px", height: "140px", marginLeft: "15px",}}alt="photo of image"/>
+              </Link>
+              </div>
             <p><b>Name:</b> {product.name}</p>
-          </Link>
+          
           <p><b>Description:</b> {product.desc}</p>
           <p><b>Category:</b> {product.atype}</p>
           <p><b>Price:</b> {product.price}</p>
           <p><b>Quantity:</b> {product.quantity}</p>
           <p><b>Rating:</b> {product.rating}</p>
-          <p><b>User:</b> {product.user}</p>
-          <img src="http://localhost:8000/media/post_images/dog.jpg" style={{width: "100px",}}alt="photo of image"/>
+          
           <button type="submit" className="btn btn-primary" style={{display: "inline-block", margin: "25px"}}>Contact seller</button>
         </div>
       ))}   <img src="http://localhost:8000/{product.image}" alt="photo of image"></img>
@@ -72,3 +75,4 @@ const ProductList = (props) => {
 export default ProductList
 
 
+// "http://localhost:8000/media/post_images/dog.jpg"
